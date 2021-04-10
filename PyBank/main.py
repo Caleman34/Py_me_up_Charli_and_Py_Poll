@@ -1,14 +1,19 @@
+#Import os module and csv reader
+import os
+import csv
 
-#import pandas for data frames
-import pandas as pd
+#create variable for path to file
+PyBank_Data = os.path.join('..', 'Resources', 'PyBank_Data.csv')
 
-# Save path to data set in variable
-PyBank_Data = "Resources/PyBank_Data.csv"
+#reading csv file with specified delimiter and variable that holds contents
+with open(PyBank_Data) as csvfile:
+    PyBank_Data_reader = csv.reader(csvfile, delimiter=',')
 
-# Use Pandas to read data file and show first 5 rows of data
-PyBank_Data_df = pd.read_csv(PyBank_Data)
-PyBank_Data_df.head()
+    print(PyBank_Data_reader)
 
+    #read the header row first
+    csv_header = next(PyBank_Data_reader)
+    print(f"CSV HEADER: {csv_header}")
 
-
-
+    #read through the rows of data after the header
+    for row in PyBank_Data_reader
