@@ -31,10 +31,24 @@ with open(PyBank_Data, 'r') as csvfile:
      
          
     
-    #print data results
-    print('Financial Analysis')
-    print('---------------------')
-    print(f'Total Months: {totalMonths}')
-    print(f'Total: ${total_profit_losses}')
-      
+    #create variable financial analysis for output to be printed and exported
+    financial_analysis = (f'''Financial Analysis
+    -----------------
+    Total Months: {totalMonths}
+    Total: ${total_profit_losses}
+    Average Change: 
+    Greatest increase in profits:
+    Greatest decrease in profits: ''')
+   
+    #print out analysis
+    print(financial_analysis)
+    
+    #create file and export financial analysis
+    output_path = os.path.join('Analysis', 'financial_analysis.txt')
+    
+    with open(output_path, 'w') as txtFile:
+        txtFile.write(financial_analysis)
+
+    txtFile.close()
+
 
