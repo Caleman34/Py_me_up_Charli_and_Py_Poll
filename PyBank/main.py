@@ -24,15 +24,17 @@ with open(PyBank_Data, 'r') as csvfile:
       #calculate length of "totalMonths" aka total number of rows after the header
       totalMonths = (len(months)) 
       
-      #add profit/losses to sum list
-      profit_losses.append(row[1])
-       #sum of total profit/losses
+      #add profit/losses in column 1 to ptofit/loses variable empty list
+      profit_losses.append(int(row[1]))
+       #sum of total profit/losses variable
       total_profit_losses = sum(profit_losses)
      
          
     
     #print data results
-    print(totalMonths)
-    print(total_profit_losses)
+    print('Financial Analysis')
+    print('---------------------')
+    print(f'Total Months: {totalMonths}')
+    print(f'Total: ${total_profit_losses}')
       
 
