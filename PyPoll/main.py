@@ -52,7 +52,7 @@ with open(PyPoll_Data, 'r') as csvfile:
     --------------------
     Total votes: {totalVote}
     --------------------
-    {candidate}: {candidatesVotes[candidate]:.3f}% ({voteCount})
+    {candidate}: {candidatesVotes[candidate]:.3f}% ({voteCount})\n
     Winner: {winner}
     --------------------''')
 
