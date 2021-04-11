@@ -44,12 +44,12 @@ with open(PyBank_Data, 'r') as csvfile:
     #calculate max increase
     max_profit = max(revenueChange)
     index_max = revenueChange.index(max_profit)
-    max_month = months[index_max]
+    max_month = months[index_max + 1]
     
     #calculate max decrease
     min_profit = min(revenueChange)
     index_min = revenueChange.index(min_profit)
-    min_month = months[index_min]
+    min_month = months[index_min + 1]
 
     #create variable financial analysis for output to be printed and exported
     financial_analysis = (f'''Financial Analysis
