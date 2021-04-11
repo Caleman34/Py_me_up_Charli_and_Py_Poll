@@ -50,7 +50,7 @@ with open(PyPoll_Data, 'r') as csvfile:
     #create file and export financial analysis
     output_path = os.path.join('Analysis', 'election_results.txt')
     
-    with open(output_path, 'w', newline="") as txtFile:
+    with open(output_path, 'w', newline="") as txtfile:
     
         txtfile.write(f'''
     Election Results
@@ -70,11 +70,14 @@ with open(PyPoll_Data, 'r') as csvfile:
        
         txtfile.write(f'''
     --------------------
-    Winner: {winner}''')
+    Winner: {winner}
+    --------------------''')
+            
         print(f'''
     --------------------
-    Winner: {winner}''')
+    Winner: {winner}
+    --------------------''')
 
     
      
-    txtFile.close() 
+    txtfile.close() 
