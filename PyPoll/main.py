@@ -64,4 +64,4 @@ with open(PyPoll_Data, 'r') as csvfile:
     with open(output_path, 'w') as txtFile:
         txtFile.write(votingResults)
 
-    txtFile.close()
+    txtFile.close() 
