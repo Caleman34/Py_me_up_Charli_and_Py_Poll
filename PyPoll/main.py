@@ -52,8 +52,11 @@ with open(PyPoll_Data, 'r') as csvfile:
     --------------------
     Total votes: {totalVote}
     --------------------
+    {candidate}: {candidatesVotes[candidate]:.3f}% ({voteCount})
     Winner: {winner}
     --------------------''')
+
+    print(votingResults)
 
     #create file and export financial analysis
     output_path = os.path.join('Analysis', 'election_results.txt')
