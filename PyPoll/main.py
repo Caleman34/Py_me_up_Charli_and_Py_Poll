@@ -36,10 +36,10 @@ with open(PyPoll_Data, 'r') as csvfile:
     winnerCount = 0
 
     #loop through voteCount dictionary for percentage of votes won
-    for candidate in vote_count:
+    for candidate in voteCount:
 
         #calc and store candidate vote percentage
-        candidatesVotes[candidates] = (voteCount[candidate] / totalVote) * 100
+        candidatesVotes[candidate] = (voteCount[candidate] / totalVote) * 100
 
         #determine the winner
 
@@ -47,3 +47,18 @@ with open(PyPoll_Data, 'r') as csvfile:
             winnerCount = voteCount[candidate]
             winner = candidate
     
+    #create variable for voting results
+    votingResults = (f'''Election Results
+    --------------------
+    Total votes: {totalVote}
+    --------------------
+    Winner: {winner}
+    --------------------''')
+
+    #create file and export financial analysis
+    output_path = os.path.join('Analysis', 'election_results.txt')
+      
+    with open(output_path, 'w') as txtFile:
+        txtFile.write(votingResults)
+
+    txtFile.close()
