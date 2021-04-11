@@ -65,19 +65,15 @@ with open(PyPoll_Data, 'r') as csvfile:
 
 
         for candidate, votes in voteCount.items():
-            txtfile.write(f'{candidate}: {candidatesVotes[candidate]:.3f}% ({voteCount})\n')
-            print(f'''{candidate}: {candidatesVotes[candidate]:.3f}% ({voteCount})''')
-       
+            txtfile.write(f'    {candidate}: {candidatesVotes[candidate]:.3f}% ({voteCount[candidate]})\n')
+            print(f'''    {candidate}: {candidatesVotes[candidate]:.3f}% ({voteCount[candidate]})''')
         txtfile.write(f'''
     --------------------
     Winner: {winner}
     --------------------''')
-            
         print(f'''
     --------------------
     Winner: {winner}
     --------------------''')
 
-    
-     
     txtfile.close() 
