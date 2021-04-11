@@ -47,21 +47,34 @@ with open(PyPoll_Data, 'r') as csvfile:
             winnerCount = voteCount[candidate]
             winner = candidate
     
-    #create variable for voting results
-    votingResults = (f'''Election Results
-    --------------------
-    Total votes: {totalVote}
-    --------------------
-    {candidate}: {candidatesVotes[candidate]:.3f}% ({voteCount})\n
-    Winner: {winner}
-    --------------------''')
-
-    print(votingResults)
-
     #create file and export financial analysis
     output_path = os.path.join('Analysis', 'election_results.txt')
-      
-    with open(output_path, 'w') as txtFile:
-        txtFile.write(votingResults)
+    
+    with open(output_path, 'w', newline="") as txtFile:
+    
+    txtfile.write(f'''
+    Election Results
+    --------------------
+    Total votes: {totalVote}
+    --------------------\n''')
 
+        print(f'''\nElection Results
+    --------------------
+    Total Votes: {totalVote}
+    --------------------''')
+
+
+        for candidate, votes in voteCount.items():
+            txtfile.write(f'{candidate}: {candidatesVotes[candidate]:.3f}% ({voteCount})\n')
+            print(f'''{candidate}: {candidatesVotes[candidate]:.3f}% ({voteCount})''')
+       
+        txtfile.write(f'''
+    --------------------
+    Winner: {winner}''')
+        print(f'''
+    --------------------
+    Winner: {winner}''')
+
+    
+     
     txtFile.close() 
