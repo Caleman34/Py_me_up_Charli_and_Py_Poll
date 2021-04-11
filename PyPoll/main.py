@@ -7,18 +7,43 @@ PyPoll_Data = os.path.join('Resources', 'PyPoll_Data.csv')
 
 #reading csv file with specified delimiter and variable that holds contents
 with open(PyPoll_Data, 'r') as csvfile:
-    csv_reader = csv.reader(csvfile, delimiter =',')
+    voteReader = csv.reader(csvfile, delimiter =',')
     
-    #read the header row first
-    csv_header = next(csv_reader)
+    #skip header row
+    next(voteReader)
     
     #create empty dictionaries
     voteCount = {}
-    candidateVotes = {}
+    candidatesVotes = {}
 
     #create a variable to hold vote count
     totalVote = 0
     
     #read through the rows of data after the header
-    for row in csv_reader:
+    for row in voteReader:
 
+        #count each vote
+        totalVote += 1
+
+        #count votes for each candidate
+        if row[2] in voteCount:
+            voteCount[row[2]] += 1
+        
+        else:
+            voteCount[row[2]] = 1
+    
+    #creat variable to hold winner of the vote count
+    winnerCount = 0
+
+    #loop through voteCount dictionary for percentage of votes won
+    for candidate in vote_count:
+
+        #calc and store candidate vote percentage
+        candidatesVotes[candidates] = (voteCount[candidate] / totalVote) * 100
+
+        #determine the winner
+
+        if voteCount[candidate] > winnerCount:
+            winnerCount = voteCount[candidate]
+            winner = candidate
+    
