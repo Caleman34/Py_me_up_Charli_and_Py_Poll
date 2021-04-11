@@ -52,7 +52,7 @@ with open(PyPoll_Data, 'r') as csvfile:
     
     with open(output_path, 'w', newline="") as txtFile:
     
-    txtfile.write(f'''
+        txtfile.write(f'''
     Election Results
     --------------------
     Total votes: {totalVote}
