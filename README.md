@@ -30,8 +30,6 @@
     Greatest decrease in profits: Sep-2013 ($-2196167)
   ```
 
-* In addition, your final script should both print the analysis to the terminal and export a text file with the results.
-
 ## PyPoll
 
 ![Vote Counting](Images/Vote_counting.png)
