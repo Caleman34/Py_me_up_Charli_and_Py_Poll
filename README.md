@@ -18,7 +18,7 @@
 
   * The greatest decrease in losses (date and amount) over the entire period
 
-* The output yielded:
+  ### The output yielded:
 
   ```text
     Financial Analysis
@@ -50,7 +50,7 @@
 
   * The winner of the election based on popular vote.
 
-* The output yielded:
+  ### The output yielded:
 
   ```text
 	Election Results
