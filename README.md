@@ -1,4 +1,4 @@
-# Py Me Up, Charlie 5
+# Py Me Up, Charlie
 
 ## PyBank
 
